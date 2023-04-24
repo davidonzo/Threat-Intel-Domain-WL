@@ -17,7 +17,7 @@ def getList():
 def get_version():
     return int(datetime.datetime.now().strftime('%Y%m%d%H%M%S'))
     
-def doMISPWarnList(wl):
+def doMISPWarnList(wl, version):
     ret = dict()
     
     ret["description"] = "OSINT DigitalSide Threat-Intel Repository - MISP Warninglist - Domain to be excluded in the daily \"latestdomains.txt\" generation process, should be marked as false positive in the related MISP event with IDS attribute not flagged"
@@ -25,19 +25,29 @@ def doMISPWarnList(wl):
     ret["matching_attributes"] = ["hostname", "domain"]
     ret["name"] = "OSINT.DigitalSide.IT WhiteList"
     ret["type"] = "hostname"
-    ret["version"] = get_version()
+    ret["version"] = version
     
     return json.dumps(ret, indent=4, separators=(",", ": "))
     
-def writeNewMISPWL(mispwl):
+def writeNewMISPWL(mispwl, version, getlist):
     f = open('../misp-warning-list/OSINT.DigitalSide-Threat-Intel-Domain-WL.misp.json', 'w')
     f.write(mispwl)
     f.close()
+    
+    a = open('../archive/'+version+'_OSINT.DigitalSide-Threat-Intel-Domain-WL.misp.json', 'w')
+    a.write(mispwl)
+    a.close()
+    
+    l = open('../archive/'+version+'_OSINT.DigitalSide-Threat-Intel-Domain-WL.txt', 'w')
+    for item in getlist:
+        l.write(item+"\n")
+    l.close()
 
 if __name__ == '__main__':
+    version = str(get_version())
     getlist = getList()
-    misp = doMISPWarnList(getlist)
-    writeWL = writeNewMISPWL(misp)
+    misp = doMISPWarnList(getlist, version)
+    writeWL = writeNewMISPWL(misp, version, getlist)
     print("")
     print("###############################")
     print("OSINT.DigitalSide.IT Domain white list succefully updated!")
