@@ -16,7 +16,7 @@ Please, follow the following instructions in order to contribute to the white li
 
 * Fork this repository
 * Clone the repository on your machine
-* Edit the file *OSINT.DigitalSide-Threat-Intel-Domain-WL.txt* in the repository root adding a domain per line or removing domains on your choise
+* Edit the file `OSINT.DigitalSide-Threat-Intel-Domain-WL.txt` in the repository root adding a domain per line or removing domains on your choise
 * Run the script `python3 tools/commitnewversion.py`
 * Merge the local changes to your before forked repository
 * Open a pull request asking to merge your fork to the main branch of this repository
