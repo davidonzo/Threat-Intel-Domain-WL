@@ -34,11 +34,11 @@ def writeNewMISPWL(mispwl, version, getlist):
     f.write(mispwl)
     f.close()
     
-    a = open('../archive/'+version+'_OSINT.DigitalSide-Threat-Intel-Domain-WL.misp.json', 'w')
+    a = open('../archive/misp-warning-list/'+version+'_OSINT.DigitalSide-Threat-Intel-Domain-WL.misp.json', 'w')
     a.write(mispwl)
     a.close()
     
-    l = open('../archive/'+version+'_OSINT.DigitalSide-Threat-Intel-Domain-WL.txt', 'w')
+    l = open('../archive/txt/'+version+'_OSINT.DigitalSide-Threat-Intel-Domain-WL.txt', 'w')
     for item in getlist:
         l.write(item+"\n")
     l.close()
