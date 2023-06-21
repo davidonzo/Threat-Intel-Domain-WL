@@ -8,7 +8,7 @@ import datetime
     
 def getList():
     ret = ""
-    r = open('../OSINT.DigitalSide-Threat-Intel-Domain-WL.txt', 'r')
+    r = open('OSINT.DigitalSide-Threat-Intel-Domain-WL.txt', 'r')
     ret = r.read().strip().split("\n")
     
     return ret
@@ -30,15 +30,15 @@ def doMISPWarnList(wl, version):
     return json.dumps(ret, indent=4, separators=(",", ": "))
     
 def writeNewMISPWL(mispwl, version, getlist):
-    f = open('../misp-warning-list/OSINT.DigitalSide-Threat-Intel-Domain-WL.misp.json', 'w')
+    f = open('misp-warning-list/OSINT.DigitalSide-Threat-Intel-Domain-WL.misp.json', 'w')
     f.write(mispwl)
     f.close()
     
-    a = open('../archive/misp-warning-list/'+version+'_OSINT.DigitalSide-Threat-Intel-Domain-WL.misp.json', 'w')
+    a = open('archive/misp-warning-list/'+version+'_OSINT.DigitalSide-Threat-Intel-Domain-WL.misp.json', 'w')
     a.write(mispwl)
     a.close()
     
-    l = open('../archive/txt/'+version+'_OSINT.DigitalSide-Threat-Intel-Domain-WL.txt', 'w')
+    l = open('archive/txt/'+version+'_OSINT.DigitalSide-Threat-Intel-Domain-WL.txt', 'w')
     for item in getlist:
         l.write(item+"\n")
     l.close()
