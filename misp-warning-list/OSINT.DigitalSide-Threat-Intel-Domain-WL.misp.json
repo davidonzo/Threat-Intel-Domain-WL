@@ -40,7 +40,8 @@
         "repository.eset.com",
         "assets-global.website-files.com",
         "vimeo.com",
-        "i.ibb.co"
+        "i.ibb.co",
+        "archive.org"
     ],
     "matching_attributes": [
         "hostname",
@@ -48,5 +49,5 @@
     ],
     "name": "OSINT.DigitalSide.IT WhiteList",
     "type": "hostname",
-    "version": "20231119174020"
+    "version": "20240418123947"
 }
