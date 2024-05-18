@@ -9,10 +9,10 @@ pastebin.com
 static.wixstatic.com
 i.imgur.com
 storage.googleapis.com
-googleapis.com
 s3.amazonaws.com
 amazonaws.com
 files.catbox.moe
+cdn.discordapp.com
 files.slack.com
 backblazeb2.com
 dropbox.com
@@ -37,5 +37,4 @@ www.dl.dropboxusercontent.com
 repository.eset.com
 assets-global.website-files.com
 vimeo.com
-web.archive.org
-
+i.ibb.co
