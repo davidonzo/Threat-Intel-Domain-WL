@@ -38,3 +38,4 @@ repository.eset.com
 assets-global.website-files.com
 vimeo.com
 i.ibb.co
+archive.org
